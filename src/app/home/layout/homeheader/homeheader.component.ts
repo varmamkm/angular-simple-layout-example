@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AparmentselectionService } from '../../aparmentselection.service';
+interface car {
+  model:string;
+  color:number;
+}
 
 @Component({
   selector: 'app-homeheader',
@@ -9,15 +13,21 @@ import { AparmentselectionService } from '../../aparmentselection.service';
 export class HomeheaderComponent implements OnInit {
   
   test:any[]=["A","B"];
-  @ViewChild('select') select : HTMLSelectElement
-
-  cars = [
+  @ViewChild('select') select : HTMLSelectElement;
+  selectedObject:string;
+  cars:car[] = [
     {model : "Ford Mustang", color : "red"},
     {model : "Fiat 500", color : "white"},
     {model : "Volvo XC90", color : "black"}
   ];
 
-  constructor(private apartmentsectionService: AparmentselectionService) { }
+  constructor(private apartmentsectionService: AparmentselectionService) {
+    apartmentsectionService.newSelection$.subscribe(
+      apartmentid => {
+        this.test.push(apartmentid);
+      });
+    this.selectedObject = this.test[0];
+   }
 
   ngOnInit() {
     this.apartmentsectionService.annouceSelection(this.select.nativeElement.value);
@@ -28,4 +38,9 @@ export class HomeheaderComponent implements OnInit {
     console.log(this.select.nativeElement.value)
   }
 
+}
+
+interface car {
+  model:string;
+  color:number;
 }

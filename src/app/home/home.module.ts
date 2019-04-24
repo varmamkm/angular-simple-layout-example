@@ -9,10 +9,12 @@ import { HomefooterComponent } from './layout/homefooter/homefooter.component';
 import { HomeheaderComponent } from './layout/homeheader/homeheader.component';
 import { StartupComponent } from './startup/startup.component';
 import { AparmentselectionService } from './aparmentselection.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     HomeRoutingModule
   ],
   declarations: [    

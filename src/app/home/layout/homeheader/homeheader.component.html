@@ -9,3 +9,8 @@
   <option value ="2">two</option>
   <option value ="3">three</option>
 </select>
+
+
+<select [ngModel]="selectedObject" >
+        <option *ngFor="let o of test" [value]="o" >{{o}}</option>
+      </select>
