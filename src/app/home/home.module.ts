@@ -8,6 +8,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { HomefooterComponent } from './layout/homefooter/homefooter.component';
 import { HomeheaderComponent } from './layout/homeheader/homeheader.component';
 import { StartupComponent } from './startup/startup.component';
+import { AparmentselectionService } from './aparmentselection.service';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { StartupComponent } from './startup/startup.component';
     LoginComponent,
     RegistrationComponent,
     StartupComponent
-  ]
+  ],
+  providers: [AparmentselectionService]
 })
 
 export class HomeModule { }
