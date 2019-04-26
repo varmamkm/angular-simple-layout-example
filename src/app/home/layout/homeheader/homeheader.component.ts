@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AparmentselectionService } from '../../aparmentselection.service';
+
 interface car {
   model:string;
   color:number;
@@ -15,6 +16,7 @@ export class HomeheaderComponent implements OnInit {
   test:any[]=["A","B"];
   @ViewChild('select') select : HTMLSelectElement;
   selectedObject:string;
+  selectedValue:string;
   cars:car[] = [
     {model : "Ford Mustang", color : "red"},
     {model : "Fiat 500", color : "white"},
@@ -30,10 +32,13 @@ export class HomeheaderComponent implements OnInit {
    }
 
   ngOnInit() {
+    console.log("test:",this.select.nativeElement.value);
+    this.selectedValue =this.select.nativeElement.value;
     this.apartmentsectionService.annouceSelection(this.select.nativeElement.value);
   }
 
   onChange() {
+    this.selectedValue =this.select.nativeElement.value;
     this.apartmentsectionService.annouceSelection(this.select.nativeElement.value);
     console.log(this.select.nativeElement.value)
   }

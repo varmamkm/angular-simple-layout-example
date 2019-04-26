@@ -29,7 +29,7 @@ newvalue:string="4";
 
    addtoheader()
    {
- this.apartmentsectionService.addNewSelection(this.newvalue);
+      this.apartmentsectionService.addNewSelection(+this.newvalue);
    }
 
   ngOnInit() {

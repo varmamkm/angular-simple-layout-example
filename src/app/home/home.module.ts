@@ -26,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     RegistrationComponent,
     StartupComponent
   ],
-  providers: [AparmentselectionService]
+  providers: [
+    AparmentselectionService,
+    HomeheaderComponent]
 })
 
 export class HomeModule { }
